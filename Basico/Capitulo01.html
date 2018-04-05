@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Curso Básico GNU/Linux Capitulo 1: Introduccion al Curso de Linux</title>
+</head>
+<body>
+	<!--SuGE3K = Canal de youtube-->
+	<p>
+		Versiones del Kernel
+		Compuesto por 4 partes: 
+		A.B.C.D
+		A = Nueva version del Kernel.
+		B = Grandes Cambios + los anteriores.
+		C = Nuevas Caracteristicas o Drivers.
+		D = Cambios menores del nucleo.
+	</p>
+	<p>
+		Tipos De Dispositivos:
+		hda1
+		hd = tipo dispositivo
+		a = numero de dispositivo o disco maestro de IDE 1 por ser letra a
+		1 = numero de particion
+
+		hd = Discos IDE
+		sd = Discos SCSI
+		scd = Unidades de DVD/CD SCSI
+		st = Unidades de Cinta SCSI
+		ht = Unidades de Cinta IDE
+		fd = Unidades de Floppy
+		lp = Puertos Paralelos
+
+		tty = terminales o Consola (en sitio)
+		pty = terminales remotas
+		eth = puerto ethernet
+		br = interfaces virtuales tipo puente
+		tap =  interfaces virtuales tipo VPN
+	</p>
+	<p>
+		Estructura de Directorios:
+		/ = Directorio Raiz
+		/bin = directorio de binarios para ejecucion
+		/boot = archivos para inicio del sistema
+		/dev = archivos de dispositivos especiales
+		/etc = archivos de configuracion
+		/home = archivos de usuarios
+		/lib = librerias compartidas
+		/media = punto de monta para cd/dvd o usb
+		/mnt = similar al anterior
+		/opt = archivos independientes
+		/proc = archivos con informacion del sistema
+		/lost=found = archivos danados
+		/root = archivos de root
+		/sbin = ejecutables solo para root
+		/tmp = archivos temporales
+		/usr = archivos compartidos entre aplicaciones
+		/var =  archivos dinamicos como los logs
+	</p>
+	<p>
+		Tipos de archivos:
+		Archivos Ordinarios: archivos que manejan informacion de usuarios
+		Archivos vinculos: son accesos directos a otros archivos
+			Simbolicos: No afecta al archivo oiginal
+			Hardlinks: afecta al archivo original
+		Archivos directorios: contienen informacion de otros archivos
+		Archivos Especiales: son los encargados de representar los dispositivos fisicos del sistema
+
+		Archivos especiales:
+			/dev/null = todo lo que se envie aqui desaparece
+			/dev/zero = provee tantos tantos caracteres null como sean solicitados
+			/proc/cpuinfo = provee informacion del procesador
+			/swap = memoria de intercambio
+	</p>
+	<p>
+		Paqueteria Comun:
+		-RedHat y derivados
+		 Fedora CentOs 	= RPM y YUM
+		-Devian y derivados
+		 Ubuntu 		= APT, APTITUDE y DEB
+	</p>
+	<p>
+		Kernel Panic
+		use las teclas: Alt + PetSis (PrtSc) + REISUB
+		R = da control absoluto del teclado
+		E = Termina todos los procesos menos el Init
+		I = Interrumpe procesos incompletos o no terminados
+		S = Sincroniza el Disco Duro
+		U = Re-monta los ficheros en forma de lectura
+		B = Reinicia el equipo
+	</p>
+</body>
+</html>

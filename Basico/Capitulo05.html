@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Curso Básico GNU/Linux Capitulo 5: Archivos y Directorios (I)</title>
+</head>
+<body>
+	<p>
+		Alias
+		Alias  = son seudonimos que se asociona a un comando
+		alias update = 'apt-get update && apt-get upgrade -y'
+		Esto solo se mantendra mientras el equipo no se reinicie, para grabarlos permanentemente
+		se deben escribir en el archivo ".bashrc" que se encuentra en el home del usuario.
+		si se ejecuta el comando alias solo bajo un usuario, muestra  todos los alias creados
+		para ese usuario
+	</p>
+	<p>
+		Rutas relativas:
+			Senala la ruta a partir del directorio actual
+		Rutas absolutas:
+			Senala la ruta desde la raiz del sistema
+
+	</p>
+	<p>
+		Directorios 
+		Para conocer la estructura de directorios principales de la distribucion utilizada
+		se puede ejecutar:
+			man hier (debian)
+	</p>
+	<p>
+		Inodes
+		Son una estrucutra de datos enlazado al tamano del dispositivo de almacenamiento
+		la cantidad de inodes va a sociado al tamano del dispositivo de almacenamiento
+	</p>
+	<p>
+		Trabajando con Directorios:
+		pwd = muestra la ruta del directorio actual
+		cd = ingresa al directorio indicado
+		cd .. = devuelve al directorio superior
+		cd ../.. devuelve a dos directorios superiores
+		cd y cd ~ = devuelven al directorio del usuario
+		cd - = devuelve al directorio anterior
+		ls = lista el contenido de una carpeta (Centos por defecto trae ll = ls -l como alias)
+			{
+				ls -lai = muestra los archivos con su respectivo inode de referencia
+				ls -lahi
+				ls -lahir = la r muestra la vista a la inversa
+				ls -lahs = la s muestra el tamano de un archivo
+				ls -lS = la S organiza de menor a mayor tamano
+				ls -t = organiza por fecha de modificacion
+				ls -laR /dierctorio = lista el contenido del directorio y sus respectivos subdirectorios
+
+			}
+		mkdir = crea un directorio
+		mkdir -p = crea varios directorios
+		rmdir = borra un directorio vacio (rf = para borrarlo de forma recursiva y forzada)
+		rmdir -p = borra un subdirectorio
+		clear = borra la pantalla
+	</p>
+</body>
+</html>

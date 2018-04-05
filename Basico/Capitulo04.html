@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Curso Básico GNU/Linux Capitulo 4: Iniciando el Trabajo</title>
+</head>
+<body>
+	<p>
+		<!--Entendiendo la shell-->
+		shell conocidas co o CLI (command line Interface)
+		bash (bourne Again Shell)
+		Sh (bourne shell)
+		Csh (c shell)
+		Ksh (korn shell)
+	</p>
+	<p>
+		Prompt
+		(1)usuario@(2)nombreMaquina:(3)~(4)$
+		1 = indica nombre de usuario
+		2 = indica el host
+		3 = indica el path o ruta donde estamos
+		4 = tipo de usuario #(root) $(usuario normal)
+	</p>
+	<p>
+		Estructura de Comandos:
+		Comandos 	opciones 	archivo/directorio afectados
+		rm			-r 			/home/charls/Documents/*
+
+		comandos Internos:
+		Asociados directamente a la shell o kernel
+		comandos Externos
+		No son asociados directamente al kernel o la shell, estos fueron instalados
+	</p>
+	<p>
+		Verificando el Sistema:
+		pwd = muestra donde estoy ubicado
+		{
+			[user01@localhost ~]$ pwd
+			/home/user01
+		}
+		type + comando = indica que tipo de comando (interno-externo) o de archivo es 
+		which + comando = indica que tipo de comando (interno-externo) o de archivo es
+		{
+			[user01@localhost ~]$ type cd 
+			cd is a shell builtin			//comando interno
+			[user01@localhost ~]$ type  rm
+			rm is /usr/bin/rm				//comando asociado
+
+			[user01@localhost ~]$ which cd
+			/usr/bin/cd
+			[user01@localhost ~]$ which rm
+			/usr/bin/rm
+			[user01@localhost ~]$
+
+		}
+		man hier = muestra toda la estructura de los directorios en debian
+	</p>
+	<p>
+		top =  monitor de sistema
+		free = muestra la memoria del sistema
+			{	[user01@localhost ~]$ free -h	}
+		w = muestra los usuarios conectados y que estan haciendo
+			echo "Hola como vas?" > /dev/tty1 = envia un mensaje a una terminal en sitio
+			echo "Bien y tu?" > /dev/pts0
+		vmstat -s = indica la memoria ram como tal informacion detallada
+		who = indica quien esta conectado
+		whoami = indica quien soy 
+		id = muesta informacion de un usuario o solo sin parametro muestra la info del user actual
+		groups = funciona igual que el "id"
+		lspci = muestra las unidades de expansion que tiene el equipo (harware que tiene el equipo) 
+		lscpu = muestra informacion relacionada al cpu
+		lsmod = muestra los modulos cargados en el sistema
+		uname -a = muestra informacion del kernel , arquitectura y tipo de sistema
+		uptime = tiempo de encendido, usuarios conectados, y carga promedio de trabajo
+		lshw = muestra la informacion relacionada al hardware (se debe instalar)
+		lsblk = muestra los diferentes discos duros y que tienen montado
+		df -h  = muestra donde se encuentras montados los sistemas de archivos
+		df -hi = para verificar los Inodes (cantidad de archivos o directorios que se pueden crear por  sistema de archivos)
+		fdisk -l = muestra informacion del disco duro y detalle de sus particiones
+		last = indica las ultimas sesiones efectivas que el sistema tuvo 
+		lastb = indica usuarios que intentaron hacer login y no fue un login exitoso
+		du = indica el tamano de un archivo/directorio
+		du -hs * = indica el tamano de un archivo/directorio para humanos y sumarizado
+		dmesg = muestra como arranco el sistema 
+		dmesg | grep usb = muestra el estado del usb (asi para cada dispositivo)
+		arch = muestra la arquitectura del sistema
+		pstree = muestra los procesos en forma de arbol (debian) [pstree -Agu]
+		lsof = muestra los archivos abiertos por una aplicacion (se debe instalar)
+			[lsof | grep user01]
+		ps = muestra los procesos que se estan ejecutando por el usuario convencional
+		ps -aux = para mayor informacion de los procesos ejecutandose en el systema
+		ifconfig = muestra la informacion de las tarjetas de red del systema
+		ifconfig -a = muestra todas las interfaces de red disponibles aun si no estan configuradas
+		ip addr = muestra informacion similar (este indica si la interface esta o no conectada)
+		ip link = muestra las intefaces y si estan arriba 
+		route -e = muestra las rutas estaticas en muestro sistema
+		ip route = muestra las rutas estaticas en muestro sistema
+		arp -e = muestra las tablas arp o computadores que estan actualmente conectados al sistema (debian)
+		netstat = muestra los puertos que tiene comunicacion en el equipo
+
+		Archivos especiales:
+			cd /proc
+				cat cpuinfo 
+				cat meminfo
+				cat mdstat   = solo esta cuando se tiene configurado un RAID
+				cat net/dev = informacion de paquetes enviados, recibido, fallado
+
+				dma          	key-users   	pagetypeinfo   	timer_list
+				driver       	kmsg        	partitions     	timer_stats
+				execdomains  	kpagecount  	sched_debug    	tty
+				acpi       		fb           	kpageflags  	schedstat      
+				buddyinfo  		filesystems  	loadavg     	scsi         
+				bus        		fs           	locks       	self           
+				cgroups    		interrupts   	mdstat      	slabinfo       
+				cmdline    		iomem        	meminfo     	softirqs       
+				consoles   		ioports      	misc        	stat
+				cpuinfo    		irq          	modules     	swaps
+				crypto     		kallsyms     	mounts      	sys
+				devices    		kcore        	mtrr        	sysrq-trigger
+				diskstats  		keys         	net         	sysvipc
+				uptime			version			vmallocinfo		vmstat
+				zoneinfo
+	</p>
+</body>
+</html>
